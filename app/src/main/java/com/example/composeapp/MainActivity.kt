@@ -3,11 +3,14 @@ package com.example.composeapp
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.absoluteOffset
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.example.composeapp.ui.theme.ComposeAppTheme
-import com.example.composeapp.ui.theme.Purple200
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,8 +28,10 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(name: String) {
-    androidx.compose.material.Surface(color = MaterialTheme.colors.contentColorFor(Purple200)) {
-        Text(text = "Hello $name!") }
+    Surface(color = MaterialTheme.colors.primary
+        /*color = MaterialTheme.colors.contentColorFor(Purple700)*/) { // color = MaterialTheme.colors.primary
+        Text(text = "Hello $name!",modifier = Modifier.padding(25.dp))
+    }
 
 }
 
